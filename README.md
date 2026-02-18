@@ -33,7 +33,7 @@ multiple tabs using real-time subscriptions.
 ## 📦 Installation
 
 ``` bash
-git clone https://github.com/your-username/smart-bookmark.git
+git clone https://github.com/Akshat090803/abstrabit-technology-assignment.git
 cd smart-bookmark
 npm install
 npm run dev
