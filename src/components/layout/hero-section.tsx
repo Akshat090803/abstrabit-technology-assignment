@@ -17,7 +17,7 @@ export default function HeroSection() {
     })
   }
   return (
-    <section className="container mx-auto px-20 h-dvh py-10 grid lg:grid-cols-2 gap-16 items-center ">
+    <section className="container mx-auto px-6 lg:px-20 h-dvh py-10 grid lg:grid-cols-2 gap-16 items-center ">
       <div className="">
        
         <h1 className="text-4xl md:text-5xl font-semibold text-foreground leading-tight">
@@ -29,7 +29,7 @@ export default function HeroSection() {
       organize, and rediscover your links — intelligently.
     </p>
 
-      <div className="mt-10">
+      <div className="lg:mt-10 md:mt-9 mt-8">
       <Button className="cursor-pointer" onClick={handleLogin}>
        <FaGoogle className="text-xs" />
 
@@ -46,10 +46,10 @@ export default function HeroSection() {
        <div className="flex justify-center">
             <Image
       src="/bookmark-2.png"
-      width={350}
-      height={350}
+      width={300}
+      height={300}
       alt="bookmark illustration"
-      className="max-w-xl"
+      className=" w-3xs md:w-2xs"
     />
   </div>
     </section>
