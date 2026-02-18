@@ -65,7 +65,8 @@ function BookmarkDialog({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-   let titleErr:string , urlErr:string;
+   let titleErr:string ="";
+    let urlErr:string="";
     if (!title) {
       titleErr="Title is required.";
       setError((prev) => {
