@@ -19,8 +19,7 @@ interface BookmarkDialogContextType {
   openCreate: () => void
   openEdit: (bookmark: Bookmark) => void
   closeDialog: () => void
-  handleDelete:(id:string)=>void
-  isDeleting:boolean
+  handleDelete:(id:string)=>Promise<void>
 }
 
 const BookmarkDialogContext =
@@ -47,7 +46,7 @@ export function BookmarkDialogProvider({
     useState<Bookmark | null>(null)
 
   const [loading , setLoading] = useState(false);
-  const [isDeleting,setIsDeleting] = useState(false)
+
 
   const openCreate = () => {
     setMode("create")
@@ -85,20 +84,19 @@ export function BookmarkDialogProvider({
    }
   }
    
-  const handleDelete = async (id:string)=>{
-         try { setIsDeleting(true)
-                 await deleteBookmark(id)
-                  toast.success("Bookmark deleted successfully.")
-         } catch (error) {
-           console.error("Failed to Delete bookmark:", error);
-           toast.error("Something went wrong. Please try again.");
-         }finally{
-           setIsDeleting(false)
-         }
+  const handleDelete = async (id: string) => {
+    try {
+      await deleteBookmark(id)
+      toast.success("Bookmark deleted successfully.")
+    } catch (error) {
+      console.error("Failed to Delete bookmark:", error)
+      toast.error("Something went wrong. Please try again.")
+      throw error
+    }
   }
   return (
     <BookmarkDialogContext.Provider
-      value={{ openCreate, openEdit, closeDialog,handleDelete,isDeleting }}
+      value={{ openCreate, openEdit, closeDialog,handleDelete }}
     >
       {children}
 

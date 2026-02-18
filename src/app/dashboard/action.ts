@@ -23,7 +23,7 @@ export async function createBookmark(data: BookmarkFormValues) {
 
   if (error) throw error;
 
-  revalidatePath('/dashboard')
+  // revalidatePath('/dashboard')
 
   return {success:true , message:"Bookmark created successfully"}
 }
@@ -42,7 +42,7 @@ export async function updateBookmark(data: BookmarkFormValues) {
     .eq("id", data.id);
 
   if (error) throw error;
-  revalidatePath('/dashboard')
+  // revalidatePath('/dashboard')
    return {success:true , message:"Bookmark updated successfully"}
 }
 
@@ -54,6 +54,6 @@ export async function deleteBookmark(id: string) {
   const { error } = await supabase.from("bookmarks").delete().eq("id", id);
 
   if(error) throw error
- revalidatePath('/dashboard')
+//  revalidatePath('/dashboard')
   return {success:true , message:"Bookmark deleted successfully"}
 }

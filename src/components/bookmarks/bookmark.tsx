@@ -16,19 +16,18 @@ import Image from "next/image"
 
 interface BookmarkCardProps {
   bookmark: Bookmark
-  onDelete?: (id: string) => void
+  onDelete: (id: string) => void
   onEdit?: (bookmark: Bookmark) => void
-  isDeleting:boolean
 }
 
 export default function BookmarkCard({
   bookmark,
   onDelete,
   onEdit,
-  isDeleting
 }: BookmarkCardProps) {
   const [copied, setCopied] = useState(false)
   const [faviconError, setFaviconError] = useState(false)
+  const [isDeleting,setIsDeleting]=useState(false)
 
   const domain = new URL(bookmark.url).hostname
   const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`
@@ -45,6 +44,18 @@ export default function BookmarkCard({
     await navigator.clipboard.writeText(bookmark.url)
     setCopied(true)
     setTimeout(() => setCopied(false), 1200)
+  }
+
+  const handleDelete = async ()=>{
+    try {
+      setIsDeleting(true)
+      await onDelete?.(bookmark.id)
+      
+    } catch (error) {
+      
+    }finally{
+      setIsDeleting(false)
+    }
   }
 
   return (
@@ -112,7 +123,7 @@ export default function BookmarkCard({
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => onDelete?.(bookmark.id)}
+            onClick={handleDelete}
             className="h-7 w-7 hover:bg-destructive/10 hover:text-destructive text-destructive cursor-pointer"
             disabled={isDeleting}
           >
