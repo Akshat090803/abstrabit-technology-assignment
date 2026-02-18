@@ -100,13 +100,13 @@ function BookmarkDialog({
     <div
       className={cn(
         "fixed inset-0 z-50 flex items-center justify-center",
-        "bg-muted-foreground/10 backdrop-blur-sm",
+        "bg-muted-foreground/10 backdrop-blur-sm px-4",
         className,
       )}
       onClick={onClose}
     >
       <div
-        className="w-full max-w-md bg-card border border-border shadow-xl rounded-2xl p-6 space-y-6 animate-in fade-in zoom-in-95"
+        className="w-full max-w-sm md:max-w-md bg-card border border-border shadow-xl rounded-2xl p-6 space-y-6 animate-in fade-in zoom-in-95"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-start">

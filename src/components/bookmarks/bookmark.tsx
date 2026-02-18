@@ -59,7 +59,7 @@ export default function BookmarkCard({
   }
 
   return (
-    <Card className="px-4 py-3 border border-border/50 hover:border-primary/30 hover:shadow-sm transition-all">
+    <Card className="px-4 py-3 bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all shadow-lg">
       
       <div className="flex justify-between items-start gap-3">
 
@@ -142,7 +142,6 @@ export default function BookmarkCard({
 
         <Button
           size="sm"
-          variant="secondary"
           className="h-7 px-2.5 text-xs"
           asChild
         >

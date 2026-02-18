@@ -14,8 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Smart Bookmark",
-  description: "Bookmark your url more effeciently",
+  title: "Smart Bookmark – Save & Organize Your Links Effortlessly",
+  description:
+    "Smart Bookmark helps you save, organize, and access your favorite links in one clean, beautiful dashboard.",
+    icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
