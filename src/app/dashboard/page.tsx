@@ -22,7 +22,7 @@ export default async function Dashboard (){
   .order("created_at", { ascending: false })
   .returns<Bookmark[]>()
 
-  return <div className="min-h-screen">
+  return <div className="min-h-dvh">
      <Header user={user}/>
   <main className="container mx-auto px-6 py-10">
   <Bookmarks initialBookmarks={bookmarks ?? []}/>

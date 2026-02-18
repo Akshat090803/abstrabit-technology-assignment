@@ -12,7 +12,7 @@ export default function NoBookMarks({ onCreate }: NoBookMarksProps) {
   
 const { openCreate } = useBookmarkDialog()
   return (
-    <div className="h-[70vh] flex items-center justify-center">
+    <div className="h-[70dvh] flex items-center justify-center">
       <div className="text-center space-y-6 max-w-sm">
         
         <div className="mx-auto h-20 w-20 rounded-full bg-primary/15 flex items-center justify-center">
