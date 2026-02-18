@@ -51,7 +51,7 @@ const { openCreate } = useBookmarkDialog()
  
 
   return (
-   <> <header className="w-full border-b border-border bg-background/80 backdrop-blur-sm sticky top-0   shadow-sm">
+   <> <header className="w-full border-b border-border bg-background/80 backdrop-blur-sm sticky top-0 z-50   shadow-sm">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <h1 className="text-lg font-semibold tracking-tight">Smart Bookmark</h1>
 
