@@ -131,6 +131,21 @@ alter table bookmarks replica identity full;
 
 ------------------------------------------------------------------------
 
+## ⚠ Challenges Faced & Solutions
+
+### OAuth Setup with Supabase
+I faced challenges while configuring Google OAuth with Supabase, particularly with handling redirects and accessing the authenticated user session in Next.js App Router. The official documentation did not fully cover this setup. I resolved this by correctly configuring the Supabase callback route, separating server and client Supabase clients, and verifying redirect URLs. I also used AI tools like ChatGPT alongside official docs to validate the implementation.
+
+### Realtime Subscription Issues
+Initially, realtime updates were not working for INSERT and DELETE events across tabs. The issue was caused by the `bookmarks` table not being added to the Supabase realtime publication and replica identity not being set correctly. I fixed it by running:
+
+``` sql
+alter publication supabase_realtime add table bookmarks;
+alter table bookmarks replica identity full;
+```
+
+------------------------------------------------------------------------
+
 ## 🌍 Deployment
 
 Deployed using **Vercel**.
