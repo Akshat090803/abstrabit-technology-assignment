@@ -67,7 +67,7 @@ export function BookmarkDialogProvider({
   const handleSubmit = async (data: BookmarkFormValues) => {
    try {
     setLoading(true);
-     console.log("Submit called")
+    //  console.log("Submit called")
     if(mode==="create"){
         await createBookmark(data);
         toast.success("Bookmark created successfully.")
@@ -77,7 +77,7 @@ export function BookmarkDialogProvider({
     }
       setOpen(false)
    } catch (error) {
-    console.error("Failed to save bookmark:", error);
+    // console.error("Failed to save bookmark:", error);
    toast.error("Something went wrong. Please try again.");
    }finally{
     setLoading(false)
@@ -89,7 +89,7 @@ export function BookmarkDialogProvider({
       await deleteBookmark(id)
       toast.success("Bookmark deleted successfully.")
     } catch (error) {
-      console.error("Failed to Delete bookmark:", error)
+      // console.error("Failed to Delete bookmark:", error)
       toast.error("Something went wrong. Please try again.")
       throw error
     }

@@ -27,7 +27,7 @@ interface HeaderProps {
 const Header = ({ user }: HeaderProps) => {
   const [isLoggingout, setIsLoggingOut] = useState(false);
 const { openCreate } = useBookmarkDialog()
-  console.log("User::", user);
+  // console.log("User::", user);
   const avatarUrl =
     user?.user_metadata?.avatar_url || "https://github.com/shadcn.png";
   const fullName = user?.user_metadata?.full_name;

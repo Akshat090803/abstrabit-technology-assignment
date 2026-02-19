@@ -14,7 +14,7 @@ export async function GET(request: Request) {
   const { error } = await supabase.auth.exchangeCodeForSession(code)
 
   if (error) {
-    console.error("OAuth Error:", error.message)
+    // console.error("OAuth Error:", error.message)
     return NextResponse.redirect(origin)
   }
 
